@@ -1,13 +1,20 @@
-# idempotent-api
-Idempotent payment API with FastAPI and Redis
-## Files
+# 🔒 Idempotent Payment API
 
-- `main.py` - API code
-- `requirements.txt` - Dependencies
+Zero-duplicate transaction handling for Django applications using idempotency key pattern.
 
-## How to run
+## 🎯 Problem
+
+| Scenario | Result |
+|----------|--------|
+| User clicks "Pay" twice | Double charge 💸 |
+| Network timeout + retry | Duplicate order |
+| Race condition | Data inconsistency |
+
+## ✅ Solution
+
+Idempotency Key + Redis Distributed Lock
+
+## 🚀 Quick Start
 
 ```bash
-pip install -r requirements.txt
-redis-server
-uvicorn main:app --reload
+docker-compose up
